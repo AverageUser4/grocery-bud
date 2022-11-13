@@ -3,11 +3,11 @@ import React from 'react';
 import { ReactComponent as EditIcon } from '../resources/edit.svg';
 import { ReactComponent as DeleteIcon } from '../resources/delete.svg';
 
-export default function Item() {
+export default function Item({ text }) {
   return (
     <>
-    
-      <span>Eggs</span>
+
+      <span>{text}</span>
 
       <div className="items-list__buttons">
 
