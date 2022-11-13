@@ -1,0 +1,148 @@
+:root {
+  --white: rgb(241, 245, 248);
+  --blueish-black: rgb(16, 42, 66);
+  --blueish-gray: rgb(97, 125, 152);
+  --light-blue: rgb(165, 213, 248);
+  --blue: rgb(73, 166, 233);
+  --red: rgb(187, 37, 37);
+  --green: rgb(37, 187, 50);
+}
+
+body {
+  margin: 0;
+
+  background: var(--white);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.website {
+  padding: 80px 20px;
+}
+
+.grocery-bud {
+  max-width: 560px;
+  padding: 16px 32px;
+  margin: auto;
+
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+}
+
+.grocery-bud__heading {
+  margin: 0;
+
+  color: var(--blueish-black);
+  letter-spacing: 1.2px;
+  font-size: clamp(22px, 4vw, 28px);
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.inputs {
+  display: flex;
+
+  margin: 24px 0;
+}
+
+.inputs__text {
+  padding: 6px 12px;
+
+  font-size: 16px;
+  background-color: var(--white);
+  border: none;
+  border-radius: 5px 0 0 5px;
+  color: var(--blueish-gray);
+
+  flex-grow: 1;
+}
+
+.inputs__button {
+  padding: 6px 12px;
+
+  color: var(--blueish-black);
+  background-color: var(--light-blue);
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+
+  transition: 500ms;
+}
+.inputs__button:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.items-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  color: var(--blueish-black);
+  letter-spacing: 1.5px;
+}
+
+.items-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 6px 12px;
+  margin: 8px 0;
+
+  border-radius: 5px;
+}
+.items-list__item:hover {
+  background-color: var(--white);
+}
+
+.items-list__buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.items-list__button {
+  padding: 3px;
+  
+  color: var(--green);
+  border: none;
+  background-color: transparent;
+  opacity: 0.5;
+
+  transition: opacity 300ms;
+}
+.items-list__button:hover {
+  opacity: 1;
+}
+.items-list__button svg {
+  height: 12px;
+}
+.items-list__button--color-2 {
+  color: var(--red);
+}
+
+.grocery-bud__clear-all-button {
+  display: block;
+  margin: 16px auto 0;
+  padding: 4px;
+
+  background-color: transparent;
+  color: var(--red);
+  border: none;
+  opacity: 0.7;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+
+  transition: opacity 500ms;
+}
+.grocery-bud__clear-all-button:hover {
+  opacity: 1;
+}
