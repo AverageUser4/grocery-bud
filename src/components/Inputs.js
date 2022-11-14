@@ -1,7 +1,20 @@
 import React from 'react';
 
-export default function Inputs({ addItem }) {
+export default function Inputs({ addItem, editItem, currentlyEditedID, items }) {
   const [text, setText] = React.useState('');
+  const textInputRef = React.useRef();
+
+  const edit = currentlyEditedID !== -1;
+
+  React.useEffect(() => {
+    if(currentlyEditedID === -1)
+      return;
+
+    const editedItem = items.find(item => item.id === currentlyEditedID);
+    setText(editedItem.text);
+
+    textInputRef.current.focus();
+  }, [currentlyEditedID]);
 
   return (
     <form 
@@ -10,6 +23,7 @@ export default function Inputs({ addItem }) {
     >
 
       <input
+        ref={textInputRef}
         size="1"
         className="inputs__text"
         placeholder="e.g. eggs"
@@ -19,9 +33,12 @@ export default function Inputs({ addItem }) {
 
       <button
         className="inputs__button"
-        onClick={() => addItem(text)}
+        onClick={() => {
+          edit ? editItem(text) : addItem(text);
+          setText('');
+        }}
       >
-        Submit
+        {edit ? 'Edit' : 'Submit'}
       </button>
 
     </form>

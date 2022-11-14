@@ -25,7 +25,7 @@ button:hover {
 
 .grocery-bud {
   max-width: 560px;
-  padding: 16px 32px;
+  padding: 32px;
   margin: auto;
 
   background-color: white;
@@ -44,6 +44,38 @@ button:hover {
   text-align: center;
   text-transform: capitalize;
   font-weight: 500;
+}
+
+.grocery-bud__prompt {
+  display: block;
+  padding: 2px 0;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
+  color: #155724;
+  background-color: rgb(212 237 218);
+
+  visibility: hidden;
+}
+.grocery-bud__prompt::before, .grocery-bud__prompt::after {
+  /* makes prompt keep the same height, 
+  uses both before and after so it stays centered */
+
+  content: 'a';
+
+  color: transparent;
+
+  pointer-events: none;
+  user-select: none;
+}
+.grocery-bud__prompt--danger {
+  color: #721c24;
+  background: #f8d7da;
+}
+.grocery-bud__prompt--visible {
+  visibility: visible;
 }
 
 .inputs {
@@ -103,6 +135,9 @@ button:hover {
 .items-list__item:hover {
   background-color: var(--white);
 }
+.items-list__item--active {
+  outline: 2px solid var(--blueish-gray);
+}
 
 .items-list__buttons {
   display: flex;
@@ -131,7 +166,7 @@ button:hover {
 
 .grocery-bud__clear-all-button {
   display: block;
-  margin: 16px auto 0;
+  margin: 26px auto 0;
   padding: 4px;
 
   background-color: transparent;
